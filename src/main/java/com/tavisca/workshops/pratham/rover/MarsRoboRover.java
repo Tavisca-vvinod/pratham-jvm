@@ -13,7 +13,7 @@ public class MarsRoboRover {
 		rover.setDirection(positions[2]);
 
 		for (char command : commands.toCharArray()) {
-			rover.roverMove(command, rover);
+			rover.roverMove(command);
 		}
 
 		System.out.println("currentPosition..." + currentPosition);

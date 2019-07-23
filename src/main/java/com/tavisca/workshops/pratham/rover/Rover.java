@@ -28,15 +28,15 @@ public class Rover {
      {
        return this.y;
      }
-     public void roverMove(char command, Rover rover) {
-        if (rover.getDirection().equalsIgnoreCase("N")) {
-            rover.FacingNorth(command);
-        } else if (rover.getDirection().equalsIgnoreCase("E")) {
-            rover.FacingEast(command);
-        } else if (rover.getDirection().equalsIgnoreCase("S")) {
-            rover.FacingSouth(command);
-        } else if (rover.getDirection().equalsIgnoreCase("W")) {
-            rover.FacingWest(command);
+     public void roverMove(char command) {
+        if (this.getDirection().equalsIgnoreCase("N")) {
+            this.FacingNorth(command);
+        } else if (this.getDirection().equalsIgnoreCase("E")) {
+            this.FacingEast(command);
+        } else if (this.getDirection().equalsIgnoreCase("S")) {
+            this.FacingSouth(command);
+        } else if (this.getDirection().equalsIgnoreCase("W")) {
+            this.FacingWest(command);
         }
      }
      private void FacingNorth(char command)
