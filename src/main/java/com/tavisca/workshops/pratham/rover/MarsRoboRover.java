@@ -1,3 +1,5 @@
+package com.tavisca.workshops.pratham.rover;
+
 public class MarsRoboRover {
 	private static int y = 0;
 	private static int x = 0;
@@ -24,7 +26,19 @@ public class MarsRoboRover {
 
 	private static void rove(char command) {
 		if (dir.equalsIgnoreCase("N")) {
-			switch (command) {
+			FacingNorth(command);
+		} else if (dir.equalsIgnoreCase("E")) {
+			FacingEast(command);
+		} else if (dir.equalsIgnoreCase("S")) {
+			FacingSouth(command);
+		} else if (dir.equalsIgnoreCase("W")) {
+			FacingWest(command);
+		}
+	}
+
+	public static void FacingNorth(char command)
+	{
+		switch (command) {
 			case 'L':
 				dir = "W";
 				break;
@@ -34,9 +48,11 @@ public class MarsRoboRover {
 			case 'M':
 				y++;
 				break;
-			}
-		} else if (dir.equalsIgnoreCase("E")) {
-			switch (command) {
+		}
+	}
+	public static void FacingEast(char command)
+	{
+		switch (command) {
 			case 'L':
 				dir = "N";
 				break;
@@ -46,9 +62,11 @@ public class MarsRoboRover {
 			case 'M':
 				x++;
 				break;
-			}
-		} else if (dir.equalsIgnoreCase("S")) {
-			switch (command) {
+		}
+	}
+	public static void FacingSouth(char command)
+	{
+		switch (command) {
 			case 'L':
 				dir = "E";
 				break;
@@ -58,9 +76,11 @@ public class MarsRoboRover {
 			case 'M':
 				y--;
 				break;
-			}
-		} else if (dir.equalsIgnoreCase("W")) {
-			switch (command) {
+		}
+	}
+	public static void FacingWest(char command)
+	{
+		switch (command) {
 			case 'L':
 				dir = "S";
 				break;
@@ -70,7 +90,6 @@ public class MarsRoboRover {
 			case 'M':
 				x--;
 				break;
-			}
 		}
 	}
 
