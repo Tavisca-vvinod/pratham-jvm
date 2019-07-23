@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class QueueTest {
 
-    private int capacity = 8;
+   /* private int capacity = 8;
     private Queue<Integer> b;
 
     @BeforeEach
@@ -108,5 +108,5 @@ class QueueTest {
             }
             assertThrows(Exception.class, q::remove);
         }
-    }
+    }*/
 }

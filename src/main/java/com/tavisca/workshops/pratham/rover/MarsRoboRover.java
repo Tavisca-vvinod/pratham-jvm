@@ -6,18 +6,13 @@ public class MarsRoboRover {
 		String currentPosition = "3 3 E";
 		String commands = "MMRMMRMRRM";
 
-		Rover rover= new Rover();
 		String[] positions = currentPosition.split(" ");
-		rover.setXcoordinate(Integer.valueOf(positions[0]));
-		rover.setYcoordinate(Integer.valueOf(positions[1]));
-		rover.setDirection(positions[2]);
+		Vector rover = new Vector(Integer.valueOf(positions[0]),Integer.valueOf(positions[1]),positions[2]);
 
-		for (char command : commands.toCharArray()) {
-			rover.roverMove(command);
-		}
+		var roverNewPosition = Vector.RoverMove(commands,rover);
 
 		System.out.println("currentPosition..." + currentPosition);
 		System.out.println("commands..." + commands);
-		System.out.println("newPosition..." + rover.getXcoordinate() + " " +rover.getYcoordinate() + " " + rover.getDirection());
+		System.out.println("newPosition..." + roverNewPosition.x + " " +roverNewPosition.y + " " + roverNewPosition.direction);
 	}
 }
