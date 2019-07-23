@@ -28,7 +28,18 @@ public class Rover {
      {
        return this.y;
      }
-     public  void FacingNorth(char command)
+     public void roverMove(char command, Rover rover) {
+        if (rover.getDirection().equalsIgnoreCase("N")) {
+            rover.FacingNorth(command);
+        } else if (rover.getDirection().equalsIgnoreCase("E")) {
+            rover.FacingEast(command);
+        } else if (rover.getDirection().equalsIgnoreCase("S")) {
+            rover.FacingSouth(command);
+        } else if (rover.getDirection().equalsIgnoreCase("W")) {
+            rover.FacingWest(command);
+        }
+     }
+     private void FacingNorth(char command)
      {
         switch (command) {
             case 'L':
@@ -42,7 +53,7 @@ public class Rover {
                 break;
         }
      }
-     public  void FacingEast(char command)
+     private  void FacingEast(char command)
      {
         switch (command) {
             case 'L':
@@ -56,7 +67,7 @@ public class Rover {
                 break;
         }
      }
-     public  void FacingSouth(char command)
+     private  void FacingSouth(char command)
      {
         switch (command) {
             case 'L':
@@ -70,7 +81,7 @@ public class Rover {
                 break;
         }
      }
-     public  void FacingWest(char command)
+     private  void FacingWest(char command)
      {
         switch (command) {
             case 'L':
@@ -82,17 +93,6 @@ public class Rover {
             case 'M':
                 x--;
                 break;
-        }
-     }
-     public void roverMove(char command, Rover rover) {
-        if (rover.getDirection().equalsIgnoreCase("N")) {
-            rover.FacingNorth(command);
-        } else if (rover.getDirection().equalsIgnoreCase("E")) {
-            rover.FacingEast(command);
-        } else if (rover.getDirection().equalsIgnoreCase("S")) {
-            rover.FacingSouth(command);
-        } else if (rover.getDirection().equalsIgnoreCase("W")) {
-            rover.FacingWest(command);
         }
      }
 }
