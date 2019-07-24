@@ -7,12 +7,11 @@ public class MarsRoboRover {
 		String commands = "MMRMMRMRRM";
 
 		String[] positions = currentPosition.split(" ");
-		Vector rover = new Vector(Integer.valueOf(positions[0]),Integer.valueOf(positions[1]),positions[2]);
+		Rover rover = new Rover(Integer.valueOf(positions[0]),Integer.valueOf(positions[1]),positions[2]);
+		rover = Rover.RoverMove(commands, rover);
 
-		var roverNewPosition = Vector.RoverMove(commands,rover);
-
-		System.out.println("currentPosition..." + currentPosition);
-		System.out.println("commands..." + commands);
-		System.out.println("newPosition..." + roverNewPosition.x + " " +roverNewPosition.y + " " + roverNewPosition.direction);
+		System.out.println("currentPosition... " + currentPosition);
+		System.out.println("commands... " + commands);
+		System.out.println("newPosition... " + rover.x + " " +rover.y + " " + rover.direction);
 	}
 }
